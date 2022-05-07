@@ -1,0 +1,32 @@
+site_name: PekingOpera
+repo_url: https://github.com/lhy1130/blog
+repo_name: lhy1130/blog
+
+theme:
+  name: material
+  language: zh
+  palette:
+    primary: deep purple
+  icon:
+    repo: fontawesome/brands/github
+
+extra_javascript: 
+    - javascripts/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+markdown_extensions:
+  - pymdownx.arithmatex: # LaTeX
+      generic: true
+  - pymdownx.highlight:
+      use_pygments: true
+      auto_title: true # 显示代码语言
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.superfences # 代码高亮
+  - pymdownx.critic
+  - pymdownx.caret # 插入标记
+  - pymdownx.keys # 键盘按键
+  - pymdownx.mark # 突出显示文本
+  - pymdownx.tilde # 删除线
+  - pymdownx.details # 可折叠块
+
