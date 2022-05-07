@@ -1,6 +1,6 @@
 site_name: PekingOpera
-repo_url: https://github.com/lhy1130/blog
-repo_name: lhy1130/blog
+repo_url: https://github.com/operapeking/blog
+repo_name: operapeking/blog
 
 theme:
   name: material
