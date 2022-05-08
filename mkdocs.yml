@@ -1,12 +1,20 @@
 site_name: PekingOpera
+
+# repo 信息
 repo_url: https://github.com/operapeking/blog
 repo_name: operapeking/blog
+
+# 版权
+copyright: Copyright &copy; 2021 - 2022 Peking Opera
 
 theme:
   name: material
   language: zh
   palette:
     primary: deep purple
+  features:
+    - navigation.tabs # 顶部目录
+    - navigation.top # 回到顶部
   icon:
     repo: fontawesome/brands/github
 
@@ -14,19 +22,29 @@ extra_javascript:
     - javascripts/mathjax.js
     - https://polyfill.io/v3/polyfill.min.js?features=es6
     - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 markdown_extensions:
   - pymdownx.arithmatex: # LaTeX
       generic: true
   - pymdownx.highlight:
       use_pygments: true
       auto_title: true # 显示代码语言
-      linenums: true
+      linenums: true # 显示行号
       linenums_style: pymdownx-inline
   - pymdownx.superfences # 代码高亮
-  - pymdownx.critic
+  - pymdownx.critic # 高亮文本
   - pymdownx.caret # 插入标记
   - pymdownx.keys # 键盘按键
   - pymdownx.mark # 突出显示文本
   - pymdownx.tilde # 删除线
   - pymdownx.details # 可折叠块
 
+plugins:
+  - git-revision-date # 修改日期 
+  - search:
+      lang: jp
+      separator: '[\\s\\u200b\\-]'
+extra:
+  social: # 页脚
+    - icon: fontawesome/brands/github 
+      link: https://github.com/operapeking
