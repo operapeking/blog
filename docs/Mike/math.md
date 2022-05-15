@@ -41,7 +41,7 @@ $a ^ {b} \equiv a ^{b \mod \phi(n)}\pmod n$
 	- 证明
 
 [例题](https://www.acwing.com/problem/content/223/)：
-给定一个整数 $N$，请你求出 $\sum_{1 \le i \le N}gcd(1, i)$的值。
+给定一个整数 $N$，请你求出 $\sum_{1 \le i \le N}\gcd(1, i)$的值。
 $1 \le N \le 2^{31}$
 
 #### 费马小定理:
@@ -66,7 +66,7 @@ $a^{p - 1} \equiv 1\pmod p$，当 $p$ 为素数时成立。
 
 #### 裴蜀定理
 
-一定 $\exists x, y\in Z\ \ s.t.\  a * x + b * y = gcd(a, b)$ 成立。
+一定 $\exists x, y\in Z\ \ s.t.\  a * x + b * y = \gcd(a, b)$ 成立。
 
 - **证明**
 	1. 演绎证明
@@ -75,7 +75,7 @@ $a^{p - 1} \equiv 1\pmod p$，当 $p$ 为素数时成立。
 
 	- $a,b$ 互质的充分必要条件是存在整数 $x,y$ 使 $a * x + b * y=1$
     - 设 $a_1,a_2,a_3......a_n$ 为 $n$ 个整数，$d$ 是它们的最大公约数，那么存在整数$x_1......x_n$ 使得 $x_1*a_1+x_2*a_2+...x_n*a_n=d$ 。
-    - $a \times x + b \times y = c$ 有解当且仅当 $c\ |\ gcd(a, b)$
+    - $a \times x + b \times y = c$ 有解当且仅当 $c\ |\ \gcd(a, b)$
 	- $abs(a \times x + b \times y)_{min} = c$
 例题：
 
@@ -103,7 +103,7 @@ $TAG:$ 欧拉定理，裴蜀定理
 不难发现这符合逆元的定义，故我们可以说一个数和其倒数互为乘法逆元。除此之外，我们还能发现一个数和其相反数互为加法逆元等等……
 
 - **应用：除法取模**
-$a \times b \equiv a \times inv(b) \pmod m$
+$a \div b \equiv a \times inv(b) \pmod m$
 - **求法：**
 	- 扩欧算法
     - 费马小定理（注意：仅在 p 为质数时成立）
@@ -117,23 +117,23 @@ for (int i = 2; i <= n; i++)
 ```
 
 #### 扩展欧几里得算法
-求解 $a \times x + b \times y = gcd(a, b)$ 的一组特解 $(x_0, y_0)$。
+求解 $a \times x + b \times y = \gcd(a, b)$ 的一组特解 $(x_0, y_0)$。
 
 - **通解**
 
-对于形如 $a \times x + b  \times y = c, gcd(a,b)\ |\ c$ 的方程来说：
+对于形如 $a \times x + b  \times y = c, \gcd(a,b)\ |\ c$ 的方程来说：
 
-它的特解为 $(x^{'} = x_0 \times \frac{c}{gcd(a, b)}, y ^ {'} = y_0 \times \frac{c}{
-gcd(a,b)})$；
+它的特解为 $(x^{'} = x_0 \times \frac{c}{\gcd(a, b)}, y ^ {'} = y_0 \times \frac{c}{
+\gcd(a,b)})$；
 
-它的通解为 $(x'+ k \times \frac{b}{gcd(a, b)}, y^{'} - k \times \frac{a}{gcd(a, b)})$ 。
+它的通解为 $(x'+ k \times \frac{b}{\gcd(a, b)}, y^{'} - k \times \frac{a}{\gcd(a, b)})$ 。
 
 ```cpp
-void exgcd(int a, int b, int &x, int &y)
+void ex\gcd(int a, int b, int &x, int &y)
 {
    if (b == 0)
        return void(x = 1), void(y = 0);
-   exgcd(b, a % b, x, y);
+   ex\gcd(b, a % b, x, y);
    int z = x;
    x = y, y = z - y * (a / b);
 }
@@ -159,7 +159,7 @@ int CRT()
 	for (int i = 1; i <= n; i++)
 	{
 		int x, y;
-		exgcd(M[i], m[i], x, y);
+		ex\gcd(M[i], m[i], x, y);
 		if (x < 0) x += m[i];
 		TJ += x * M[i] * a[i];
 	}
