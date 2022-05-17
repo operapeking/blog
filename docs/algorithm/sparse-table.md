@@ -61,6 +61,7 @@ int main()
 求最大公因数也是 RMQ 问题。
 
 ??? note "转移方程"
+
     ```cpp
     f[i][k] = gcd(f[i][k - 1], f[i + (1 << k - 1)][k - 1]);
     ```
@@ -79,6 +80,7 @@ int main()
 再将所有的 `Chord` 存入一个大根堆中。每次取出根 $now$ 时，统计答案。由于 $now$ 的区间是 $st \sim pos$，为了不漏掉可能的答案，还需要在取出 $now$ 时将 `Chord(st, l, pos - 1)`、`Chord(st, pos + 1, r)` 放回堆中。
 
 ??? note "代码"
+
     ```cpp
     #include <algorithm>
     #include <cstdio>

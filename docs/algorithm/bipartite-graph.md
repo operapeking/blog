@@ -37,6 +37,7 @@
 时间复杂度 $O(nm)$
 
 ??? note "代码"
+
     ```cpp
     #include <cstdio>
     #include <bitset>
@@ -103,6 +104,7 @@
 将其转化成二分图的最大匹配问题：所有属性 $\left[1,10000\right]$ 为左部点，所有武器为右部点，从 $1$ 开始尝试与武器匹配，直到不能再匹配为止。
 
 ??? note "代码"
+
     ```cpp
     #include <cstdio>
     #include <bitset>
